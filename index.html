@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0f172a">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Jagan's Budgetor</title>
@@ -1378,5 +1380,11 @@ buildMonthOptions();
 renderHome();
 if(transactions.length===0) setTimeout(()=>toast('👋 Tap + to add your first transaction'),900);
 </script>
+  <script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js")
+    .then(() => console.log("Service Worker Registered"));
+}
+  </script>
 </body>
 </html>
